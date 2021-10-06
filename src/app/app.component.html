@@ -1,0 +1,12 @@
+<hello name="{{ name }}"></hello> Filter by name :<input
+  type="text"
+  [(ngModel)]="searchString"
+/>
+<p
+  *ngFor="
+    let food of foods | async | filter: 'name':searchString;
+    let i = index
+  "
+>
+  {{ food.name }}
+</p>
