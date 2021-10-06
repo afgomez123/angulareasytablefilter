@@ -1,12 +1,41 @@
-<hello name="{{ name }}"></hello> Filter by name :<input
-  type="text"
-  [(ngModel)]="searchString"
-/>
-<p
-  *ngFor="
-    let food of foods | async | filter: 'name':searchString;
-    let i = index
-  "
->
-  {{ food.name }}
-</p>
+<table>
+  <thead>
+    <hello name="{{ nameFirst }}"></hello>
+    Filter by fruit name :<input type="text" [(ngModel)]="searchStringFruit" />
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let food of foods | async | filter: 'name':searchStringFruit;
+        let i = index
+      "
+    >
+      <td>
+        {{ food.name }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />
+<table>
+  <thead>
+    <hello name="{{ nameSecond }}"></hello>
+    Filter by people name :<input
+      type="text"
+      [(ngModel)]="searchStringPeople"
+    />
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let peop of people | async | filter: 'name':searchStringPeople;
+        let i = index
+      "
+    >
+      <td>
+        {{ peop.name }}
+      </td>
+    </tr>
+  </tbody>
+</table>
